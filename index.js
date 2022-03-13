@@ -5,8 +5,7 @@ const creds = require("./credential.json");
 const cors = require("cors");
 const mongodb = require("mongodb");
 const MongoClient = mongodb.MongoClient;
-const URL =
-  "mongodb+srv://Bulkmailtool:bulkmailtool@cluster0.cy8ue.mongodb.net?retryWrites=true&w=majority";
+const URL ="mongodb+srv://Bulkmailtool:bulkmailtool@cluster0.cy8ue.mongodb.net?retryWrites=true&w=majority";
 let app = express();
 app.use(
   cors({
