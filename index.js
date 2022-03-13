@@ -3,9 +3,9 @@ let nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const creds = require("./credential.json");
 const cors = require("cors");
-const mongodb = require("mongodb");
-const MongoClient = mongodb.MongoClient;
-const URL ="mongodb+srv://Bulkmailtool:bulkmailtool@cluster0.cy8ue.mongodb.net?retryWrites=true&w=majority";
+// const mongodb = require("mongodb");
+// const MongoClient = mongodb.MongoClient;
+// const URL ="mongodb+srv://Bulkmailtool:bulkmailtool@cluster0.cy8ue.mongodb.net?retryWrites=true&w=majority";
 let app = express();
 app.use(
   cors({
@@ -37,15 +37,15 @@ app.post("/mail", async (req, res, next) => {
   var subject = req.body.subject;
   var name = req.body.name;
   // var name = req.body.name
-  try {
-    let connection = await MongoClient.connect(URL);
-    let db = connection.db("Bulk_Mail_Tool");
-    await db.collection("Mails").insertOne(req.body);
-    connection.close();
-    res.json({ message: "Mail Added" });
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   let connection = await MongoClient.connect(URL);
+  //   let db = connection.db("Bulk_Mail_Tool");
+  //   await db.collection("Mails").insertOne(req.body);
+  //   connection.close();
+  //   res.json({ message: "Mail Added" });
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
   const mailOptions = {
     from: name,
